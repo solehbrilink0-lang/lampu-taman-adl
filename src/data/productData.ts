@@ -1,14 +1,20 @@
 import { Review, PhotoSlot, LivePurchase } from '../types';
+import heroRegeneratedImg from '../assets/images/regenerated_image_1791273042930.png';
+import handOnLamp from '../assets/images/hand_on_lamp_closeup_1791223776305.jpg';
+import womanPointing from '../assets/images/woman_pointing_lamp_1791223788813.jpg';
+import womanAmazed from '../assets/images/woman_amazed_lamp_1791223800412.jpg';
+import beforeAfter from '../assets/images/taman_sebelum_sesudah_1791223234060.jpg';
+import pathway from '../assets/images/jalur_taman_bunga_estetik_1791223246497.jpg';
 
-// High-resolution photographic assets generated directly matching user promotional flyers
-export const WOMAN_PRESENTING = '/src/assets/images/woman_presenting_lamp_1791223765077.jpg';
-export const HAND_ON_LAMP = '/src/assets/images/hand_on_lamp_closeup_1791223776305.jpg';
-export const WOMAN_POINTING = '/src/assets/images/woman_pointing_lamp_1791223788813.jpg';
-export const WOMAN_AMAZED = '/src/assets/images/woman_amazed_lamp_1791223800412.jpg';
+// High-resolution photographic assets bundled directly for Vercel production deployment
+export const WOMAN_PRESENTING = heroRegeneratedImg;
+export const HAND_ON_LAMP = handOnLamp;
+export const WOMAN_POINTING = womanPointing;
+export const WOMAN_AMAZED = womanAmazed;
 export const HERO_IMAGE = WOMAN_PRESENTING; // Primary hero visual requested by user
 export const CLOSEUP_IMAGE = HAND_ON_LAMP;
-export const BEFORE_AFTER_IMAGE = '/src/assets/images/taman_sebelum_sesudah_1791223234060.jpg';
-export const PATHWAY_IMAGE = '/src/assets/images/jalur_taman_bunga_estetik_1791223246497.jpg';
+export const BEFORE_AFTER_IMAGE = beforeAfter;
+export const PATHWAY_IMAGE = pathway;
 
 // Shopee Affiliate / Direct Store Link requested by user
 export const SHOPEE_PRODUCT_URL = 'https://shopee.co.id/product/157287391/7551700319/';
