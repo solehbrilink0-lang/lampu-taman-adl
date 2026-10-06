@@ -4,7 +4,11 @@ import { INITIAL_PHOTO_SLOTS, SHOPEE_PRODUCT_URL, PROMO_PRICE, NORMAL_PRICE, DIS
 import { getAllPhotos } from '../utils/imageStore';
 import { ZoomIn, X, ShoppingBag, Tag, ArrowRight } from 'lucide-react';
 
-export const PhotoGallery: React.FC = () => {
+interface PhotoGalleryProps {
+  refreshTrigger?: number;
+}
+
+export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ refreshTrigger }) => {
   const [slots, setSlots] = useState<PhotoSlot[]>(INITIAL_PHOTO_SLOTS);
   const [activeCategory, setActiveCategory] = useState<string>('Semua');
   const [zoomSlot, setZoomSlot] = useState<PhotoSlot | null>(null);
@@ -20,7 +24,7 @@ export const PhotoGallery: React.FC = () => {
       );
     };
     loadSlots();
-  }, []);
+  }, [refreshTrigger]);
 
   const categories = ['Semua', 'Poster Promosi', 'Edukasi Produk', 'Foto Produk', 'Penawaran'];
 

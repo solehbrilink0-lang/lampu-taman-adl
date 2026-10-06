@@ -1,8 +1,12 @@
 import React from 'react';
-import { ShoppingBag, Sparkles, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import { ShoppingBag, Sparkles, MapPin, ShieldCheck, Heart, Settings } from 'lucide-react';
 import { SHOPEE_PRODUCT_URL, PROMO_PRICE, NORMAL_PRICE, DISCOUNT_PERCENT } from '../data/productData';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   return (
     <footer className="bg-[#07090c] border-t border-slate-800 text-slate-400 text-xs py-14 pb-24 md:pb-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,10 +79,22 @@ export const Footer: React.FC = () => {
         {/* Divider & Copyright */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
           <p>© {new Date().getFullYear()} ADL Lighting Decorative Hand Made Indonesia. All rights reserved.</p>
-          <p className="flex items-center gap-1 text-slate-400">
-            <span>Dibuat dengan dedikasi pengrajin lampu hias lokal</span>
-            <Heart className="w-3 h-3 text-rose-500 fill-current inline" />
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="flex items-center gap-1 text-slate-400">
+              <span>Dibuat dengan dedikasi pengrajin lampu hias lokal</span>
+              <Heart className="w-3 h-3 text-rose-500 fill-current inline" />
+            </p>
+            {onOpenAdmin && (
+              <button
+                onClick={onOpenAdmin}
+                className="opacity-40 hover:opacity-100 transition-opacity text-[10px] text-slate-400 hover:text-amber-400 inline-flex items-center gap-1 cursor-pointer"
+                title="Mode Pemilik Toko: Atur & Simpan Foto Produk ke Server Publik"
+              >
+                <Settings className="w-3 h-3" />
+                <span>Pengaturan Foto Server</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </footer>
