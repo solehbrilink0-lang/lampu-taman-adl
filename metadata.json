@@ -2,7 +2,5 @@
   "name": "Lampu Taman ADL - Solusi Taman Estetik & Hangat",
   "description": "Ubah taman rumah yang suram & gelap menjadi estetik, hangat, dan aman dengan Lampu Hias Taman Minimalis 1 Meter ADL. Harga murah, kualitas kokoh, beli resmi di Shopee.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

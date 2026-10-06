@@ -10,12 +10,26 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ refreshTrigger }) => {
   const [heroImageSrc, setHeroImageSrc] = useState<string>(WOMAN_PRESENTING);
-  const [isOriginalUserPhoto, setIsOriginalUserPhoto] = useState<boolean>(true);
+  const [isOriginalUserPhoto, setIsOriginalUserPhoto] = useState<boolean>(false);
 
   useEffect(() => {
-    // Keep updated with latest WOMAN_PRESENTING asset
-    setHeroImageSrc(WOMAN_PRESENTING);
-    setIsOriginalUserPhoto(true);
+    const loadHeroPhoto = async () => {
+      const customPhoto = await getPhoto('hero-photo');
+      if (customPhoto) {
+        setHeroImageSrc(customPhoto);
+        setIsOriginalUserPhoto(true);
+      } else {
+        const slot1Photo = await getPhoto('slot-1');
+        if (slot1Photo) {
+          setHeroImageSrc(slot1Photo);
+          setIsOriginalUserPhoto(true);
+        } else {
+          setHeroImageSrc(WOMAN_PRESENTING);
+          setIsOriginalUserPhoto(false);
+        }
+      }
+    };
+    loadHeroPhoto();
   }, [refreshTrigger]);
 
   const triggerShopeeClick = () => {
