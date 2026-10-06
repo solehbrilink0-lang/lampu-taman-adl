@@ -200,6 +200,12 @@ export const ProblemSolution: React.FC<Props> = ({ refreshTrigger }) => {
                 src={solusiImg}
                 alt="Foto Asli Lampu Taman Minimalis ADL"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  if (!img.src.includes('woman_pointing_lamp')) {
+                    img.src = '/images/woman_pointing_lamp_1791223788813.jpg';
+                  }
+                }}
                 className="w-full max-h-[500px] object-contain rounded-2xl"
               />
             </div>

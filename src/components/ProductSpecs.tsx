@@ -29,6 +29,12 @@ export const ProductSpecs: React.FC = () => {
                 src={PATHWAY_IMAGE}
                 alt="Instalasi Lampu Taman ADL di Jalan Setapak"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  if (!img.src.includes('jalur_taman_bunga_estetik')) {
+                    img.src = '/images/jalur_taman_bunga_estetik_1791223246497.jpg';
+                  }
+                }}
                 className="w-full h-80 sm:h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />

@@ -76,6 +76,12 @@ export const LiveSalesPopup: React.FC = () => {
             src={CLOSEUP_IMAGE}
             alt="Lampu Taman ADL"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const img = e.currentTarget as HTMLImageElement;
+              if (!img.src.includes('hand_on_lamp')) {
+                img.src = '/images/hand_on_lamp_closeup_1791223776305.jpg';
+              }
+            }}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-amber-500/10 pointer-events-none" />

@@ -121,6 +121,12 @@ export const Features: React.FC = () => {
                 src={CLOSEUP_IMAGE}
                 alt="Detail Fisik Lampu Hias Minimalis ADL"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const img = e.currentTarget as HTMLImageElement;
+                  if (!img.src.includes('hand_on_lamp')) {
+                    img.src = '/images/hand_on_lamp_closeup_1791223776305.jpg';
+                  }
+                }}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>

@@ -161,6 +161,12 @@ export const Hero: React.FC<HeroProps> = ({ refreshTrigger }) => {
                   src={heroImageSrc}
                   alt="Lampu Taman Minimalis ADL Asli"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (!img.src.includes('woman_presenting_lamp')) {
+                      img.src = '/images/woman_presenting_lamp_1791223765077.jpg';
+                    }
+                  }}
                   className="w-full h-auto max-h-[580px] object-contain mx-auto"
                 />
 

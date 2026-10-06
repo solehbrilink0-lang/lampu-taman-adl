@@ -1,14 +1,14 @@
 import { Review, PhotoSlot, LivePurchase } from '../types';
 
-// High-resolution photographic assets generated directly matching user promotional flyers
-export const WOMAN_PRESENTING = '/src/assets/images/woman_presenting_lamp_1791223765077.jpg';
-export const HAND_ON_LAMP = '/src/assets/images/hand_on_lamp_closeup_1791223776305.jpg';
-export const WOMAN_POINTING = '/src/assets/images/woman_pointing_lamp_1791223788813.jpg';
-export const WOMAN_AMAZED = '/src/assets/images/woman_amazed_lamp_1791223800412.jpg';
+// High-resolution photographic assets served reliably from public/images
+export const WOMAN_PRESENTING = '/images/woman_presenting_lamp_1791223765077.jpg';
+export const HAND_ON_LAMP = '/images/hand_on_lamp_closeup_1791223776305.jpg';
+export const WOMAN_POINTING = '/images/woman_pointing_lamp_1791223788813.jpg';
+export const WOMAN_AMAZED = '/images/woman_amazed_lamp_1791223800412.jpg';
 export const HERO_IMAGE = WOMAN_PRESENTING; // Primary hero visual requested by user
 export const CLOSEUP_IMAGE = HAND_ON_LAMP;
-export const BEFORE_AFTER_IMAGE = '/src/assets/images/taman_sebelum_sesudah_1791223234060.jpg';
-export const PATHWAY_IMAGE = '/src/assets/images/jalur_taman_bunga_estetik_1791223246497.jpg';
+export const BEFORE_AFTER_IMAGE = '/images/taman_sebelum_sesudah_1791223234060.jpg';
+export const PATHWAY_IMAGE = '/images/jalur_taman_bunga_estetik_1791223246497.jpg';
 
 // Shopee Affiliate / Direct Store Link requested by user
 export const SHOPEE_PRODUCT_URL = 'https://shopee.co.id/product/157287391/7551700319/';

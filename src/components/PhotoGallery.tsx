@@ -80,6 +80,12 @@ export const PhotoGallery: React.FC = () => {
                   src={slot.currentUrl}
                   alt={slot.title}
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement;
+                    if (!img.src.includes('woman_presenting_lamp')) {
+                      img.src = '/images/woman_presenting_lamp_1791223765077.jpg';
+                    }
+                  }}
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
 
@@ -216,6 +222,12 @@ export const PhotoGallery: React.FC = () => {
               src={zoomSlot.currentUrl}
               alt={zoomSlot.title}
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                if (!img.src.includes('woman_presenting_lamp')) {
+                  img.src = '/images/woman_presenting_lamp_1791223765077.jpg';
+                }
+              }}
               className="max-h-[70vh] w-auto rounded-2xl object-contain shadow-2xl border border-slate-800 bg-black"
             />
 
